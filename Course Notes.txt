@@ -1,0 +1,808 @@
+
+========================================
+codepen
+========================================
+
+html/css/javascript
+html is the structure / order
+css in the style and layout
+javascript is the logic
+
+========================================
+jquery selectors
+========================================
+https://api.jquery.com/category/selectors/
+
+jquery said, "let's take the ability we already have in css and apply it to js"
+easier than xpath, uses same selector syntax as CSS
+
+lets you select
+- elements (id,attribute, name, etc..)
+- attribute values
+- form elements
+- heirarchy (parent,child,descendant, sibling)
+- elements by state (enabled,enabled,hidden)
+- position
+- class name
+
+Syntax:
+========================================
+$("selector");
+$("selector").method();
+
+
+Select multiple elements out of the DOM
+========================================
+$("selector1, selector2, selector N");
+$("element[attr='value'][attr='value2']");
+
+Select wrapped sets
+========================================
+Treat sets of element as an array so you can grab individual elements
+$("selector")[0];
+$("selector").get(0);
+
+Adds to wrapped set but not DOM
+better for performance
+========================================
+$("selector").add("<div>Added content</div>");
+
+
+Dom access and traversal is expensive.  think about the dom tree with its parents and children.  When you go to select things, think about performance.  You could be grabbing too many elements.  Consider the best selector for the job - select things with precision.
+
+
+========================================
+DOM Element Selectors
+========================================
+
+All
+========================================
+("*")
+Selects all elements
+
+Animated
+========================================
+:animated
+Select all elements that are in the progress of an animation at the time the selector is run.
+
+Attribute Contains Prefix Selector
+========================================
+[name|=”value”]
+Selects elements that have the specified attribute with a value either equal to a given string or starting with that string followed by a hyphen (-).
+
+Attribute Contains Selector
+========================================
+[name*=”value”]
+Selects elements that have the specified attribute with a value containing a given substring.
+
+Attribute Contains Word Selector
+========================================
+[name~=”value”]
+Selects elements that have the specified attribute with a value containing a given word, delimited by spaces.
+
+Attribute Ends With Selector
+========================================
+[name$=”value”]
+Selects elements that have the specified attribute with a value ending exactly with a given string. The comparison is case sensitive.
+
+Attribute Equals Selector
+========================================
+[name=”value”]
+Selects elements that have the specified attribute with a value exactly equal to a certain value.
+
+Attribute Not Equal Selector
+========================================
+[name!=”value”]
+Select elements that either don’t have the specified attribute, or do have the specified attribute but not with a certain value.
+
+Attribute Starts With Selector
+========================================
+[name^=”value”]
+Selects elements that have the specified attribute with a value beginning exactly with a given string.
+
+Button Selector
+========================================
+:button
+Selects all button elements and elements of type button.
+
+Checkbox Selector
+========================================
+:checkbox
+Selects all elements of type checkbox.
+
+Checked Selector
+========================================
+:checked
+Matches all elements that are checked or selected.
+
+Child Selector
+========================================
+(“parent > child”)
+Selects all direct child elements specified by “child” of elements specified by “parent”.
+
+Class Selector
+========================================
+(“.class”)
+Selects all elements with the given class.
+
+Contains Selector
+========================================
+:contains()
+Select all elements that contain the specified text.
+
+Descendant Selector
+========================================
+(“ancestor descendant”)
+Selects all elements that are descendants of a given ancestor.
+
+Disabled Selector
+========================================
+:disabled
+Selects all elements that are disabled.
+
+Element Selector
+========================================
+(“element”)
+Selects all elements with the given tag name.
+
+Empty Selector
+========================================
+:empty
+Select all elements that have no children (including text nodes).
+
+Enabled Selector
+========================================
+:enabled
+Selects all elements that are enabled.
+
+Index Equals Selector
+========================================
+:eq()
+Select the element at index n within the matched set.
+
+Even Selector
+========================================
+:even
+Selects even elements, zero-indexed. See also odd.
+
+File Selector
+========================================
+:file
+Selects all elements of type file.
+
+First Child Selector
+========================================
+:first-child
+Selects all elements that are the first child of their parent.
+
+First-of-Type Selector
+========================================
+:first-of-type
+Selects all elements that are the first among siblings of the same element name.
+
+First Selector
+========================================
+:first
+Selects the first matched element.
+
+Focus Selector
+========================================
+:focus
+Selects element if it is currently focused.
+
+Greater Than Selector
+========================================
+:gt()
+Select all elements at an index greater than index within the matched set.
+
+Has Attribute Selector
+========================================
+[name]
+Selects elements that have the specified attribute, with any value.
+
+Has Selector
+========================================
+:has()
+Selects elements which contain at least one element that matches the specified selector.
+
+Header Selector
+========================================
+:header
+Selects all elements that are headers, like h1, h2, h3 and so on.
+
+Hidden Selector
+========================================
+:hidden
+Selects all elements that are hidden.
+
+ID Selector
+========================================
+(“#id”)
+Selects a single element with the given id attribute.
+
+Image Selector
+========================================
+:image
+Selects all elements of type image.
+
+Input Selector
+========================================
+:input 
+Selects all input, textarea, select and button elements.
+
+Language Selector
+========================================
+:lang()
+Selects all elements of the specified language.
+
+Last Child Selector
+========================================
+:last-child
+Selects all elements that are the last child of their parent.
+
+Last-of-Type Selector
+========================================
+:last-of-type
+Selects all elements that are the last among siblings of the same element name.
+ 
+Last Selector
+========================================
+:last
+Selects the last matched element.
+
+Less Than Selector
+========================================
+:lt()
+Select all elements at an index less than index within the matched set.
+
+Multiple Attribute Selector
+========================================
+[name=”value”][name2=”value2″]
+Matches elements that match all of the specified attribute filters.
+
+Multiple Selector
+========================================
+(“selector1, selector2, selectorN”)
+Selects the combined results of all the specified selectors.
+
+Next Adjacent Selector
+========================================
+(“prev + next”)
+Selects all next elements matching “next” that are immediately preceded by a sibling “prev”.
+
+Next Siblings Selector
+========================================
+(“prev ~ siblings”)
+Selects all sibling elements that follow after the “prev” element, have the same parent, and match the filtering “siblings” selector.
+
+Not Selector
+========================================
+:not()
+Selects all elements that do not match the given selector.
+
+nth-child Selector
+========================================
+:nth-child()
+Selects all elements that are the nth-child of their parent.
+
+nth-last-child Selector
+========================================
+:nth-last-child()
+Selects all elements that are the nth-child of their parent, counting from the last element to the first.
+
+nth-last-of-type Selector
+========================================
+:nth-last-of-type()
+Selects all the elements that are the nth-child of their parent in relation to siblings with the same element name, counting from the last element to the first.
+
+nth-of-type Selector
+========================================
+:nth-of-type()
+Selects all elements that are the nth child of their parent in relation to siblings with the same element name.
+
+Odd Selector
+========================================
+:odd
+Selects odd elements, zero-indexed. See also even.
+
+Only Child Selector
+========================================
+:only-child
+Selects all elements that are the only child of their parent.
+
+Only-of-type Selector
+========================================
+:only-of-type
+Selects all elements that have no siblings with the same element name.
+
+Parent Selector
+========================================
+:parent
+Select all elements that have at least one child node (either an element or text).
+
+Password Selector
+========================================
+:password
+Selects all elements of type password.
+
+Radio Selector
+========================================
+:radio
+Selects all elements of type radio.
+
+Reset Selector
+========================================
+:reset
+Selects all elements of type reset.
+
+Root Selector
+========================================
+:root
+Selects the element that is the root of the document.
+
+Selected Selector
+========================================
+:selected 
+Selects all elements that are selected.
+
+Submit Selector
+========================================
+:submit
+Selects all elements of type submit.
+
+Target Selector
+========================================
+:target
+Selects the target element indicated by the fragment identifier of the document’s URI.
+
+Text Selector
+========================================
+:text
+Selects all input elements of type text.
+
+Visible Selector
+========================================
+:visible
+Selects all elements that are visible.
+
+
+Escaping meta-characters in selectors:
+========================================
+To use any of the meta-characters ( such as  !"#$%&'()*+,./:;<=>?@[\]^`{|}~ ) as a literal part of a name, it must be escaped with with two backslashes: \\. For example, an element with id="foo.bar", can use the selector $("#foo\\.bar"). The W3C CSS specification contains the complete set of rules regarding valid CSS selectors. Also useful is the blog entry by Mathias Bynens on CSS character escape sequences for identifiers.
+
+W3C Rules: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+CSS Escape Sequences: ttps://mathiasbynens.be/notes/css-escapes
+
+
+There are 5 categories of jquery selectors:
+
+Basic Selectors (CSS Compatible)
+========================================
+$("*");
+$("elementName");
+$("#elementId");
+$(".class");
+
+Attribute Selectors
+========================================
+$("selector[attr]");
+$("selector[attr='value']");
+$("selector[attr^='value']");
+$("selector[attr$='value']");
+$("selector[attr*='value']");
+
+Hierarchy Selectors
+========================================
+$("ancestor descendant");
+$("parent > child");
+$("prev element + next element");
+$("prev sibling + next sibling");
+
+Positional Selectors
+========================================
+$("element:first");
+$("element:last");
+
+jQuery Specific Filter Selectors
+========================================
+$(":button");
+$(":checkbox");
+$(":password");
+$(":submit");
+$(":text");
+$(":file");
+$(":contains(text)");
+$(":not(selector)"); // selector can be #id, .class, or any kind of mix and match
+
+
+========================================
+jQuery Chaining
+========================================
+Run multiple commands/methods on a wrapped set while only accessing those DOM elements once.
+
+Select DOM element once and through chaining you can apply multiple commands.  Let's change the background color on all paragraphs to red while at the same time changing the font color to green.
+
+$("p").css("background-color","red").css("color","green");
+
+Chaining Syntax
+========================================
+$("selector").method();
+$("selector").method1().method2();
+
+You can pass in arguments as well.
+
+
+========================================
+jQuery Element Modification, Manipulation, and Styling
+========================================
+
+Resources
+• http://learn.query.com
+• http://api.jquery.com/category/manipulation/
+• http://api.jquery.com/category/css/
+• http://learn.jquery.com/using-jquery-core/manipulating-elements/ • http://learn.jquery.com/using-jquery-core/css-styling-dimensions/
+
+All of the methods in this section manipulate the DOM in some manner. A few of them simply change one of the attributes of an element (also listed in the Attributes category), while others set an element's style properties (also listed in the CSS category). Still others modify entire elements (or groups of elements) themselves—inserting, copying, removing, and so on. All of these methods are referred to as "setters," as they change the values of properties.
+A few of these methods—such as .attr(), .html(), and .val()—also act as "getters," retrieving information from DOM elements for later use.
+
+
+========================================
+Modifying Element Data
+========================================
+$("#p").html("The quick brown fox jumped over the <em>lazy</em> dog"); 
+$("#p").text("The quick brown fox jumped over the lazy dog");
+$("#div p:first").text("This changes the first paragraph of the #div div");
+
+========================================
+Inside Elements
+========================================
+$("content").appendTo(" selector ");
+$("content").prependTo(" selector ");
+$("selector").append("<li>this is after</li>");
+$("selector").prepend("<li>this is after</li>");
+
+========================================
+Outside Elements
+========================================
+$("content").insertAfter("selector");
+$("content").insertBefore(" selector ");
+$("selector").after("<li>this is after</li>")
+$("selector").before("<li>this is after</li>");
+$(selector).before(content, function(index) {} );
+
+========================================
+Copying Elements
+========================================
+$("selector").clone().appendTo("selector2");
+
+========================================
+Creating New Elements
+========================================
+$("<a/>", {
+	html: "This is a <strong>new</strong> link", "class": "link", href: "page.html"
+});
+
+========================================
+Removing Elements
+========================================
+$("selector").remove();
+$("selector").detach();
+$("selector").empty();
+
+========================================
+Replacing Elements
+========================================
+$("selector").replaceAll("content");
+$("selector").replaceWith("content");
+
+========================================
+Wrapping Elements
+========================================
+$("selector").wrap();
+$("selector").wrapAll();
+$("selector").wrapInner();
+$("selector").unwrap();
+
+========================================
+Modifying Attributes
+========================================
+$("selector").attr("name","value");
+$("selector").prop("name","value");
+$("selector").removeAttr("name");
+$("selector").removeProp("prop");
+$("selector").attr("name", function(attr) { ... } );
+
+========================================
+Style Elements
+========================================
+$("selector").css("style","value");
+$("selector").css({"style":"value","style":"value"});
+$("selector").css("style", function(index, value) { ... } );
+
+
+========================================
+Styling & Dimensions
+========================================
+$("selector).hasClass("className");
+$("selector).addClass("className");
+$("selector).addClass("className className2"); $("selector).addClass("className").removeClass("className"); $("selector).removeClass("className");
+$("selector).removeClass("className");
+$("selector).toggleClass("className className2");
+
+$("selector").width("100px");
+$("selector").width();
+$("selector").height("100px");
+$("selector").height();
+$("selector").position();
+
+
+
+.addClass()
+Adds the specified class(es) to each element in the set of matched elements.
+
+.after()
+Insert content, specified by the parameter, after each element in the set of matched elements.
+
+.append()
+Insert content, specified by the parameter, to the end of each element in the set of matched elements.
+
+.appendTo()
+Insert every element in the set of matched elements to the end of the target.
+
+.attr()
+Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+
+.before()
+Insert content, specified by the parameter, before each element in the set of matched elements.
+
+.clone()
+Create a deep copy of the set of matched elements.
+
+.css()
+Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
+
+.detach()
+Remove the set of matched elements from the DOM.
+
+.empty()
+Remove all child nodes of the set of matched elements from the DOM.
+
+.hasClass()
+Determine whether any of the matched elements are assigned the given class.
+
+.height()
+Get the current computed height for the first element in the set of matched elements or set the height of every matched element.
+
+.html()
+Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
+
+.innerHeight()
+Get the current computed inner height (including padding but not border) for the first element in the set of matched elements or set the inner height of every matched element.
+
+.innerWidth()
+Get the current computed inner width (including padding but not border) for the first element in the set of matched elements or set the inner width of every matched element.
+
+.insertAfter()
+Insert every element in the set of matched elements after the target.
+
+.insertBefore()
+Insert every element in the set of matched elements before the target.
+
+jQuery.cssNumber
+An object containing all CSS properties that may be used without a unit. The .css() method uses this object to see if it may append px to unitless values.
+
+.offset()
+Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document.
+
+.outerHeight()
+Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin. Returns a number (without “px”) representation of the value or null if called on an empty set of elements.
+
+.outerWidth()
+Get the current computed width for the first element in the set of matched elements, including padding and border.
+
+.position()
+Get the current coordinates of the first element in the set of matched elements, relative to the
+parent.
+
+.prepend()
+Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.
+
+.prependTo()
+Insert every element in the set of matched elements to the beginning of the target.
+
+.prop()
+Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.
+
+.remove()
+Remove the set of matched elements from the DOM.
+
+.removeAttr()
+Remove an attribute from each element in the set of matched elements.
+
+.removeClass()
+Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+
+.removeProp()
+Remove a property for the set of matched elements.
+
+.replaceAll()
+Replace each target element with the set of matched elements.
+
+.replaceWith()
+Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.
+
+.scrollLeft()
+Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element.
+
+.scrollTop()
+Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element.
+
+.text()
+Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.
+
+.toggleClass()
+Add or remove one or more classes from each element in the set of matched elements, depending on either the class’s presence or the value of the state argument.
+
+.unwrap()
+Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place.
+
+Forms
+
+.val()
+Get the current value of the first element in the set of matched elements or set the value of every matched element.
+
+.width()
+Get the current computed width for the first element in the set of matched elements or set the width of every matched element.
+
+.wrap()
+Wrap an HTML structure around each element in the set of matched elements.
+
+.wrapAll()
+Wrap an HTML structure around all elements in the set of matched elements.
+
+.wrapInner()
+Wrap an HTML structure around the content of each element in the set of matched elements.
+
+
+========================================
+jQuery Effects
+========================================
+
+hugely importatnt for user experience as long as they are subtle and purposeful so that it helps the user.  Do it for a reason.
+
+Don't go crazy.  Too much is like using many different typefaces on a flyer.
+
+Just a little bit of effect makes for a much better application.
+
+Use selectors that get really specific about where a thing is.
+
+====================================
+Basic Effects
+If it’s showing, hide it. If it’s hiding, show it.
+====================================
+
+.hide();
+====================================
+It sets its display to none, so it's not a part of the layout, but still inside the DOM.
+
+difference between display and visibility:  display: none pulls it out of the layout.  Visibility just hides it and leaves it in, and leaves a space for it.
+
+When you write selectors and use a space ('.parent div') it only looks at the div children of .parent.  It's the descendant operator.  Multiple selectors typically use commas.
+
+.show()
+====================================
+turns on the display, usually from display: none; Shows all objects within the selector if selector contains multiple elements.
+
+.toggle()
+====================================
+toggle takes the current state and reverses it.  hide > show or show > hide.  Just switches it back and forth like an on/off switch.
+
+
+====================================
+Fading Effects
+====================================
+Fading adjusts the opacity of the selected element.  Adds a little shine.  It goes through a range of opacities to get to the value specified.  Lets you set a time to fade in ms.  Once the range gets to invisible, it pulls it out of the DOM.  Everything collapses around it.  Can also be done in CSS - you don't need jQuery.
+
+.fadeIn()
+====================================
+
+.fadeOut()
+====================================
+
+.fadeTo(), .fadeto(500, 1) //fadeto full opacity in 500ms (5 seconds)
+
+Set the opacity to a set value.  Does not set to display to none at lowest value.  Leaves it in the DOM.  It keeps the space there.  Only fadeTo does this.
+
+.fadeToggle();
+====================================
+If it’s showing, fade it out. If it’s hidden, fade it in.
+
+
+====================================
+Sliding
+====================================
+
+
+.slideUp()
+====================================
+Hides an element using a sliding motion.  Like collapsing.  Just like an accordion.  Menus, sidebars, etc.  Just uses CSS transforms and changes the value of height.
+
+.slideDown()
+====================================
+Shows an element using a sliding motion.  Expands a collapsed element.
+
+.slideToggle()
+====================================
+If it’s showing, then hide it. If it’s hiding, then show it.
+
+
+
+====================================
+Custom Functions
+====================================
+
+.animate()
+====================================
+Perform a custom animation of a set of CSS properties.  Lots of features here. jQuery lets you provide a custom easing function.  For example going slow at first and speeding up over time.  Ease in and out, mathematically and quadratically, time dependent, using a custom method.
+
+You can only animate properties that have a numeric value.  Width, height, length, opacity, etc.
+
+It looks wrong if something moves perfectly linerally.  Things don't behave like that in real life, so add a little animation to make it look alive, more like the physics of the real world.
+
+You can pass in properties and options. duration, easing, queue, specialEasing, step, progress, duration (speed), etc.  See http://api.jquery.com/animate
+
+  Example 
+  ====================================
+  //our custom ease in out function
+  $.easing.easeInOutQuad = function (x, t, b, c, d) {
+    if ((t/=d/2) < 1) return c/2*t*t + b;
+    return -c/2 * ((--t)*(t-2) -1) + b;
+  };
+
+  // the animation method activated by clicking on the selector element
+  $('.parent div').on('click',function(ev) {
+    $(ev.currentTarget).animate({width: 200}, 'fast', 'easeInOutQuad'); 
+  });
+
+
+To pass in options, 
+
+$(ev.currentTarget).animate({width: 200}, {duration: 5000});  // object, value in {}
+
+Step function gives you now and tween
+
+$('.parent div').on('click',
+  function(ev) {
+    $(ev.currentTarget).animate(
+      { width: 200 },
+      { duration: 5000},
+      { step: function(now,fx) { console.log('now'); } }
+    );
+  }
+);
+
+.queue(), .dequeue(), and .clearQueue()
+====================================
+Control the queue of functions to be executed on the matched elements
+
+Queue is for a sequence of several animation steps.  For example: move an object up, right, then down and take x many seconds for each animation.
+
+
+.delay()
+====================================
+Set a timer to delay execution of subsequent items in the queue
+
+
+.stop()
+====================================
+Stop the animation
+
+
+.finish()
+====================================
+Stop the animation and clear queue
+
+
+
+
+
