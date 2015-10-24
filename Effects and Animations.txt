@@ -1,0 +1,142 @@
+========================================
+jQuery Effects
+========================================
+
+hugely importatnt for user experience as long as they are subtle and purposeful so that it helps the user.  Do it for a reason.
+
+Don't go crazy.  Too much is like using many different typefaces on a flyer.
+
+Just a little bit of effect makes for a much better application.
+
+Use selectors that get really specific about where a thing is.
+
+====================================
+Basic Effects
+If it’s showing, hide it. If it’s hiding, show it.
+====================================
+
+.hide();
+====================================
+It sets its display to none, so it's not a part of the layout, but still inside the DOM.
+
+difference between display and visibility:  display: none pulls it out of the layout.  Visibility just hides it and leaves it in, and leaves a space for it.
+
+When you write selectors and use a space ('.parent div') it only looks at the div children of .parent.  It's the descendant operator.  Multiple selectors typically use commas.
+
+.show()
+====================================
+turns on the display, usually from display: none; Shows all objects within the selector if selector contains multiple elements.
+
+.toggle()
+====================================
+toggle takes the current state and reverses it.  hide > show or show > hide.  Just switches it back and forth like an on/off switch.
+
+
+====================================
+Fading Effects
+====================================
+Fading adjusts the opacity of the selected element.  Adds a little shine.  It goes through a range of opacities to get to the value specified.  Lets you set a time to fade in ms.  Once the range gets to invisible, it pulls it out of the DOM.  Everything collapses around it.  Can also be done in CSS - you don't need jQuery.
+
+.fadeIn()
+====================================
+
+.fadeOut()
+====================================
+
+.fadeTo(), .fadeto(500, 1) //fadeto full opacity in 500ms (5 seconds)
+
+Set the opacity to a set value.  Does not set to display to none at lowest value.  Leaves it in the DOM.  It keeps the space there.  Only fadeTo does this.
+
+.fadeToggle();
+====================================
+If it’s showing, fade it out. If it’s hidden, fade it in.
+
+
+====================================
+Sliding
+====================================
+
+
+.slideUp()
+====================================
+Hides an element using a sliding motion.  Like collapsing.  Just like an accordion.  Menus, sidebars, etc.  Just uses CSS transforms and changes the value of height.
+
+.slideDown()
+====================================
+Shows an element using a sliding motion.  Expands a collapsed element.
+
+.slideToggle()
+====================================
+If it’s showing, then hide it. If it’s hiding, then show it.
+
+
+
+====================================
+Custom Functions
+====================================
+
+.animate()
+====================================
+Perform a custom animation of a set of CSS properties.  Lots of features here. jQuery lets you provide a custom easing function.  For example going slow at first and speeding up over time.  Ease in and out, mathematically and quadratically, time dependent, using a custom method.
+
+You can only animate properties that have a numeric value.  Width, height, length, opacity, etc.
+
+It looks wrong if something moves perfectly linerally.  Things don't behave like that in real life, so add a little animation to make it look alive, more like the physics of the real world.
+
+You can pass in properties and options. duration, easing, queue, specialEasing, step, progress, duration (speed), etc.  See http://api.jquery.com/animate
+
+  Example 
+  ====================================
+  //our custom ease in out function
+  $.easing.easeInOutQuad = function (x, t, b, c, d) {
+    if ((t/=d/2) < 1) return c/2*t*t + b;
+    return -c/2 * ((--t)*(t-2) -1) + b;
+  };
+
+  // the animation method activated by clicking on the selector element
+  $('.parent div').on('click',function(ev) {
+    $(ev.currentTarget).animate({width: 200}, 'fast', 'easeInOutQuad'); 
+  });
+
+
+To pass in options, 
+
+$(ev.currentTarget).animate({width: 200}, {duration: 5000});  // object, value in {}
+
+Step function gives you now and tween
+
+$('.parent div').on('click',
+  function(ev) {
+    $(ev.currentTarget).animate(
+      { width: 200 },
+      { duration: 5000},
+      { step: function(now,fx) { console.log('now'); } }
+    );
+  }
+);
+
+.queue(), .dequeue(), and .clearQueue()
+====================================
+Control the queue of functions to be executed on the matched elements
+
+Queue is for a sequence of several animation steps.  For example: move an object up, right, then down and take x many seconds for each animation.
+
+
+.delay()
+====================================
+Set a timer to delay execution of subsequent items in the queue
+
+
+.stop()
+====================================
+Stop the animation
+
+
+.finish()
+====================================
+Stop the animation and clear queue
+
+
+
+
+
